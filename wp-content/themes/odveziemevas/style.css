@@ -1,0 +1,139 @@
+/*
+Theme Name: OdveziemeVas
+Theme URI: http://www.odveziemevas.eu
+Author: Maros Smrek
+Author URI: https://smrek.sk
+Description: Commerce page for Ivan Vano
+Text Domain: odveziemeVas
+*/
+
+
+
+/*
+GENERAL*/
+
+html,body{
+    height: 100%;
+}
+
+body{
+    background: url("img/home_background.jpg") 50% 0 no-repeat fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+.row{
+ margin-right: 0;
+ margin-left: 0;
+}
+
+
+/*
+NAVIGATION*/
+
+header{
+    padding-top: 60px;
+}
+
+.logo{
+    max-width: 40%;
+}
+
+.main_menu{
+    display: none;
+    z-index: 100;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 60%;
+    width: 40%;
+    background: #1f1f1f;
+}
+
+/*HAMBURGER NAVIGATION*/
+div.nav-icon1 {
+    z-index: 200;
+    float: right;
+    margin-top: 0;
+    border: 5px solid rgba(255,255,255,0.3);
+    border-radius: 100%;
+}
+
+div.nav-icon1:hover {
+    border: 5px solid #fff000;
+}
+
+.nav-icon1 {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    margin: 50px auto;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    margin: 15px;
+}
+
+.hamburger_open{
+    background: #fff000 !important;
+}
+
+.nav-icon1 span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 22px;
+    background: rgba(255,255,255,0.5);
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    text-align: right;
+    float: right;
+    left: 14px;
+}
+
+.nav-icon1 span:nth-child(1) {
+    top: 15px;
+}
+
+.nav-icon1 span:nth-child(2) {
+    top: 24px;
+}
+
+.nav-icon1 span:nth-child(3) {
+    top: 32px;
+}
+
+.nav-icon1.open span:nth-child(1) {
+    top: 24px;
+    -webkit-transform: rotate(135deg);
+    -moz-transform: rotate(135deg);
+    -o-transform: rotate(135deg);
+    transform: rotate(135deg);
+}
+
+.nav-icon1.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+}
+
+.nav-icon1.open span:nth-child(3) {
+    top: 24px;
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    transform: rotate(-135deg);
+}
