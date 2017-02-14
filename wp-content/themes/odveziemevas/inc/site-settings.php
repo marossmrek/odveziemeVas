@@ -15,3 +15,14 @@ function odvezieme_setup()
     add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 }
 
+// Add specific CSS class by filter
+add_filter( 'body_class', 'odveziem_class_names' );
+function odveziem_class_names( $classes )
+{
+    $slug = get_post_field( 'post_name', get_post() );
+
+    $classes = array( $slug );
+
+    return $classes;
+}
+

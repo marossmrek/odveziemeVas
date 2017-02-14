@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head() ?>
 </head>
-<body>
+<body <?php body_class()?>>
 <header>
     <nav class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
                 <div class="row">
                     <div class="col-xs-6 col-sm-6 ms">
-                        <a href="#"><img class="logo"  src="http://localhost/odvezieme/wp-content/uploads/2017/02/logo.png" alt="logo"></a>
+                        <?php dynamic_sidebar( 'sidebar-logo' ); ?>
+                        <!--<a href="#"><img class="logo"  src="http://localhost/odvezieme/wp-content/uploads/2017/02/logo.png" alt="logo"></a>-->
                     </div>
                     <div class="col-xs-6 col-sm-6 ham">
                         <div class="nav-icon1">

@@ -14,9 +14,12 @@ GENERAL*/
 
 html,body{
     height: 100%;
+    font-family: 'Open Sans';
+    overflow-x: hidden;
+    list-style: none;
 }
 
-body{
+.domov,.kontakt{
     background: url("img/home_background.jpg") 50% 0 no-repeat fixed;
     background-size: cover;
     height: 100%;
@@ -27,16 +30,23 @@ body{
  margin-left: 0;
 }
 
+section{
+    height: 75%;
+    padding: 10% 0%;
+}
+
 
 /*
 NAVIGATION*/
 
 header{
-    padding-top: 60px;
+    height: 25%;
+    padding: 5% 0%;
 }
 
-.logo{
-    max-width: 40%;
+img.attachment-full{
+    max-width: 40% !important;
+    height: auto;
 }
 
 .main_menu{
@@ -48,6 +58,38 @@ header{
     left: 60%;
     width: 40%;
     background: #1f1f1f;
+}
+
+.navigacia{
+    height: 100%;
+}
+
+.overlay_nav{
+    position: relative;
+    height: 40%;
+    top: 30%;
+    text-align: center;
+}
+
+.overlay_nav li{
+    list-style: none;
+    height: 25%;
+}
+
+.overlay_nav a {
+    color: #fff;
+    font-size: 25px;
+    font-variant: all-petite-caps;
+}
+
+.overlay_nav a:hover,
+.overlay_nav a:focus{
+text-decoration: none;
+    color: #fff000;
+}
+
+.active {
+    color: #fff000 !important;
 }
 
 /*HAMBURGER NAVIGATION*/
@@ -136,4 +178,126 @@ div.nav-icon1:hover {
     -moz-transform: rotate(-135deg);
     -o-transform: rotate(-135deg);
     transform: rotate(-135deg);
+}
+
+.hamburger_animation {
+    position: relative;
+    left: -60%;
+    -webkit-animation-name: ham_slider; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: ham_slider;
+    animation-duration: 1s;
+
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes ham_slider {
+    0% {
+        left: 0%;
+        top: 0%;
+    }
+    100% {
+        left: -60%;
+        top: 0%;
+    }
+}
+
+/* Standard syntax */
+@keyframes ham_slider {
+    0% {
+        left: 0%;
+        top: 0%;
+    }
+    100% {
+        left: -60%;
+        top: 0%;
+    }
+}
+
+.main_menu_animation {
+    display: block;
+    -webkit-animation-name: menu_slider; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1s; /* Safari 4.0 - 8.0 */
+    animation-name: menu_slider;
+    animation-duration: 1s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes menu_slider {
+    0% {
+        left: 100%;
+        top: 0%;
+    }
+    100% {
+        left: 60%;
+        top: 0%;
+    }
+}
+
+/* Standard syntax */
+@keyframes menu_slider {
+    0% {
+        left: 100%;
+        top: 0%;
+    }
+    100% {
+        left: 60%;
+        top: 0%;
+    }
+}
+
+/*HOME SETTNGS*/
+
+.wells h1 {
+    color: #fff;
+    text-align: center;
+    line-height: 1.1;
+    font-size: 2.5em;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/*
+ASIDE*/
+
+aside{
+    background-color: rgba(255,255,255,0.3);
+}
+
+.row_footer{
+    height: 100%;
+}
+
+.submenu_footer{
+    padding: 1.5% 0%;
+}
+
+.menu{
+    margin: 0;
+}
+
+.menu li{
+    display: inline-block;
+    list-style: none;
+    width: 15%;
+    text-align: center;
+}
+
+.menu a{
+    color: #fff;
+    font-size: .8em;
+    text-transform: uppercase;
+}
+.menu a:hover,
+.menu a:focus{
+    text-decoration: none;
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: rgba(255,255,255,0.8);
+    padding: 1% 0%;
+    text-align: center;
 }
