@@ -10,6 +10,8 @@ add_action('wp_enqueue_scripts', 'odvezieme_theme_scripts');
 function odvezieme_theme_scripts()
 {
 
+    wp_enqueue_script( 'jquery-ui-slider');
+
     wp_enqueue_script(
         'odvezieme-app', get_template_directory_uri() . '/js/app.js',
         array( 'jquery' ), '', true
@@ -22,6 +24,7 @@ function odvezieme_theme_scripts()
     wp_enqueue_style(
         'bootstrap-css', 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
     );
+
 
     wp_enqueue_style(
         'odvezieme-style', get_stylesheet_uri()

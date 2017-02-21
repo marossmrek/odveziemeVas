@@ -119,7 +119,7 @@ div.nav-icon1:hover {
     -o-transition: .5s ease-in-out;
     transition: .5s ease-in-out;
     cursor: pointer;
-    margin: 15px;
+    /*margin: 15px;*/
 }
 
 .hamburger_open{
@@ -293,6 +293,83 @@ aside{
 .menu a:focus{
     text-decoration: none;
 }
+
+/*CENNIK*/
+.cennik{
+    background-color: #0b070799;
+}
+body > section:nth-child(2){
+    height: auto;
+    padding: 80px 45px
+}
+/*slider*/
+.ui-slider-handle {
+    background: #7fdbfd;
+    width: 21px !important;
+    position: absolute;
+    left: -250%;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#slider-vertical{
+    height: 300px;
+    background: #fff000;
+    width: 3.5px;
+    position: relative;
+    left: 23px;
+}
+
+#amount{
+    border: 0;
+    color: #7fdbfd;
+    font-weight: bold;
+    background-color: #6c6a6a;
+}
+
+.col-md-1 > p:nth-child(1) > label:nth-child(1){
+    font-size: 12px;
+}
+path {
+    display: none;
+}
+#dk{
+    display: none !important;
+}
+
+path#sk, path#cz, path#rk, path#de, path#hu, path#at, path#it, path#svg_18,path#svg_1,
+path#svg_2,path#svg_7,path#svg_8,path#svg_11,path#svg_15,path#svg_21,path#svg_24{
+    display:block;
+}
+
+path#sk{
+    fill:#fff000 !important;
+}
+
+#svg_1{
+    fill: #7fdbfd !important;
+}
+
+svg{
+    transform: scale(3);
+}
+
+.europe_maps{
+    position: relative;
+    top:-350px;
+}
+
+.col-md-1 > p:nth-child(1) > label:nth-child(1){
+    color: #B4B4B4;
+}
+
+.select_city{
+    fill: #7fdbfd !important;
+}
+
+
+
 
 /*FOOTER*/
 

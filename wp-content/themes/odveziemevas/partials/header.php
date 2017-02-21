@@ -7,6 +7,7 @@
     <?php wp_head() ?>
 </head>
 <body <?php body_class()?>>
+<!--<div class="overlay"></div>-->
 <header>
     <nav class="container-fluid">
         <div class="row">
