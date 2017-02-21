@@ -141,6 +141,17 @@ function odveziem_slider_shortcode()
                       <label for="amount">Príchod do:</label>
                       <input type="text" id="amount" readonly>
                     </p>
+                    
+                    <ul class="city_list">
+                     <li> <a href="#">Mnichov </a>          </li>
+                    <li> <a href="#">Praha </a>          </li>
+                    <li> <a href="#">Budapest </a>          </li>
+                   <li> <a href="#">Brno </a>          </li>
+                   <li> <a href="#">Kosice </a>          </li>
+                   <li> <a href="#">Vieden </a>          </li>
+                   <li> <a href="#">Schwechat </a>          </li>
+                   <li> <a href="#">Milano </a>          </li>
+                                </ul>
                      
                     <div id="slider-vertical"></div>
           </div>';

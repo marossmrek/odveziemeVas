@@ -300,7 +300,7 @@ aside{
 }
 body > section:nth-child(2){
     height: auto;
-    padding: 80px 45px
+    padding: 47px 45px
 }
 /*slider*/
 .ui-slider-handle {
@@ -314,7 +314,7 @@ body > section:nth-child(2){
 }
 
 #slider-vertical{
-    height: 300px;
+    height: 350px;
     background: #fff000;
     width: 3.5px;
     position: relative;
@@ -331,12 +331,12 @@ body > section:nth-child(2){
 .col-md-1 > p:nth-child(1) > label:nth-child(1){
     font-size: 12px;
 }
-path {
+/*path {
     display: none;
 }
 #dk{
     display: none !important;
-}
+}*/
 
 path#sk, path#cz, path#rk, path#de, path#hu, path#at, path#it, path#svg_18,path#svg_1,
 path#svg_2,path#svg_7,path#svg_8,path#svg_11,path#svg_15,path#svg_21,path#svg_24{
@@ -368,9 +368,18 @@ svg{
     fill: #7fdbfd !important;
 }
 
+ul.city_list{
+    position: absolute;
+    top: 14%;
+}
+ul.city_list > li{
+    margin-top: 30%;
+    list-style: none;
+}
 
-
-
+.col-md-1 > p:nth-child(1){
+    margin: 0px 0px 35px;
+}
 /*FOOTER*/
 
 footer{
