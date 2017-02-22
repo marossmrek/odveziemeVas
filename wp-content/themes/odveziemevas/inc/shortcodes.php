@@ -21,7 +21,7 @@ add_shortcode('slider', 'odveziem_slider_shortcode');
 function odveziem_slider_shortcode()
 {
     $html =
-          '<div class="col-md-6 europe_maps">
+          '<div class="col-md-5 europe_maps">
                 <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" width="680" height="520" inkscape:version="0.48.4 r9939" sodipodi:docname="®Blank_Map_of_Europe.svg" style=""><rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="none" stroke="none"/>
   <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10" gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2" inkscape:window-width="1366" inkscape:window-height="716" id="namedview98" showgrid="false" inkscape:zoom="0.90769231" inkscape:cx="296.88688" inkscape:cy="177.77057" inkscape:window-x="-8" inkscape:window-y="-8" inkscape:window-maximized="1" inkscape:current-layer="svg3157"/>
   <title id="title4">Countries of Europe</title>
@@ -136,25 +136,124 @@ function odveziem_slider_shortcode()
   </g><path fill="#eb1a1a" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M-102.315673828125,20.241607666015625 C-102.315673828125,19.613739013671875 -101.60791015625,19.105133056640625 -100.73419189453125,19.105133056640625 C-99.86050415039062,19.105133056640625 -99.15283203125,19.613739013671875 -99.15283203125,20.241607666015625 C-99.15283203125,20.86944580078125 -99.86050415039062,21.3780517578125 -100.73419189453125,21.3780517578125 C-101.60791015625,21.3780517578125 -102.315673828125,20.86944580078125 -102.315673828125,20.241607666015625 z" class="" id="svg_5"/><path fill="#eb1a1a" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M-102.315673828125,20.241607666015625 C-102.315673828125,19.613739013671875 -101.60791015625,19.105133056640625 -100.73419189453125,19.105133056640625 C-99.86050415039062,19.105133056640625 -99.15283203125,19.613739013671875 -99.15283203125,20.241607666015625 C-99.15283203125,20.86944580078125 -99.86050415039062,21.3780517578125 -100.73419189453125,21.3780517578125 C-101.60791015625,21.3780517578125 -102.315673828125,20.86944580078125 -102.315673828125,20.241607666015625 z" class="" id="svg_4"/><path fill="#d50b0b" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M396.48324704170227,346.3720892369747 C396.48324704170227,345.78535827994347 397.0385754108429,345.3100775182247 397.72421383857727,345.3100775182247 C398.4098217487335,345.3100775182247 398.96518063545227,345.78535827994347 398.96518063545227,346.3720892369747 C398.96518063545227,346.9588507115841 398.4098217487335,347.4341009557247 397.72421383857727,347.4341009557247 C397.0385754108429,347.4341009557247 396.48324704170227,346.9588507115841 396.48324704170227,346.3720892369747 z" id="svg_7" class="point"/><path fill="#eb1a1a" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M363.00899535417557,358.1527026295662 C363.00899535417557,357.52483397722244 363.5550463795662,357.0162280201912 364.2291491627693,357.0162280201912 C364.9032214283943,357.0162280201912 365.4492114186287,357.52483397722244 365.4492114186287,358.1527026295662 C365.4492114186287,358.7805407643318 364.9032214283943,359.28914672136307 364.2291491627693,359.28914672136307 C363.5550463795662,359.28914672136307 363.00899535417557,358.7805407643318 363.00899535417557,358.1527026295662 z" id="svg_1" class="point"/><path fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" style="color: rgb(0, 0, 0);" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" id="svg_12" d="M375.59689815342426,354.5323139578104 "/><path fill="#e84141" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M356.69002670631744,357.7675461231265 C356.69002670631744,357.17222716799006 357.17222716799006,356.69002670631744 357.7675461231265,356.69002670631744 C358.362865078263,356.69002670631744 358.8450655399356,357.17222716799006 358.8450655399356,357.7675461231265 C358.8450655399356,358.362865078263 358.362865078263,358.8450655399356 357.7675461231265,358.8450655399356 C357.17222716799006,358.8450655399356 356.69002670631744,358.362865078263 356.69002670631744,357.7675461231265 z" id="svg_2" class="point"/><path fill="#eb1a1a" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M358.7965908795595,358.8870544433594 C358.7965908795595,358.311279296875 359.33653838932514,357.84478759765625 360.00316436588764,357.84478759765625 C360.66969878971577,357.84478759765625 361.2096768170595,358.311279296875 361.2096768170595,358.8870544433594 C361.2096768170595,359.4629211425781 360.66969878971577,359.9292907714844 360.00316436588764,359.9292907714844 C359.33653838932514,359.9292907714844 358.7965908795595,359.4629211425781 358.7965908795595,358.8870544433594 z" id="svg_8" class="point"/><path fill="#eb1a1a" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M359.2716698603763,345.5708623650062 C359.2716698603763,344.9529391162323 359.7624541122641,344.4524514966761 360.36839921120554,344.4524514966761 C360.9743087666757,344.4524514966761 361.4650930185635,344.9529391162323 361.4650930185635,345.5708623650062 C361.4650930185635,346.18882115725137 360.9743087666757,346.6893087768076 360.36839921120554,346.6893087768076 C359.7624541122641,346.6893087768076 359.2716698603763,346.18882115725137 359.2716698603763,345.5708623650062 z" id="svg_11" class="point"/><path fill="#eb1a1a" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M339,335 C339,334.447509765625 339.447509765625,334 340,334 C340.552490234375,334 341,334.447509765625 341,335 C341,335.552490234375 340.552490234375,336 340,336 C339.447509765625,336 339,335.552490234375 339,335 z" id="svg_15" class="point"/><path fill="#eb1a1a" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M379,366 C379,365.4475138121547 379.4475138121547,365 380,365 C380.5524861878453,365 381,365.4475138121547 381,366 C381,366.5524861878453 380.5524861878453,367 380,367 C379.4475138121547,367 379,366.5524861878453 379,366 Z" id="svg_18" class="point"/><path fill="#eb1a1a" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M318.22480618953705,360.7906975746155 C318.22480618953705,360.2382073402405 318.67231595516205,359.7906975746155 319.22480618953705,359.7906975746155 C319.77729642391205,359.7906975746155 320.22480618953705,360.2382073402405 320.22480618953705,360.7906975746155 C320.22480618953705,361.3431878089905 319.77729642391205,361.7906975746155 319.22480618953705,361.7906975746155 C318.67231595516205,361.7906975746155 318.22480618953705,361.3431878089905 318.22480618953705,360.7906975746155 z" id="svg_21" class="point"/><path fill="#eb1a1a" fill-opacity="1" stroke="none" stroke-opacity="1" stroke-width="1" stroke-dasharray="none" stroke-linejoin="miter" stroke-linecap="butt" stroke-dashoffset="" fill-rule="nonzero" opacity="1" marker-start="" marker-mid="" marker-end="" d="M296,394 C296,393.4475138121547 296.4475138121547,393 297,393 C297.5524861878453,393 298,393.4475138121547 298,394 C298,394.5524861878453 297.5524861878453,395 297,395 C296.4475138121547,395 296,394.5524861878453 296,394 Z" id="svg_24" class="point selected"/></g></svg>
 
           </div>
-          <div class="col-md-1">
-                    <p>
+          <div class="col-md-5">
+          <table class="city_price" style="width:100%">
+          
+            <thead>
+    <tr>
+      <th class="city_place">  <p>
+                      <label for="amount">Odjazd z <span class="BA">Bratislavy</span>, príchod do mesta:</label>
+                      <input type="text" id="amount" readonly>
+                    </p></th>
+      
+    </tr>
+  </thead>
+  <tr>
+    <th>1-3 osoby</th>
+    <th>4-5 osob</th> 
+    <th>6 osob</th>
+  </tr>
+  <tbody class="load_show_price"><tr><td class="load_less">-</td>
+    <td class="load_more">-</td> 
+    <td class="load_most">-</td>
+  </tr></tbody>
+  <tbody class="hide_price Budapest"><tr><td class="less">200</td>
+    <td class="more">210</td> 
+    <td class="most">220</td>
+  </tr></tbody>
+    <tbody class="hide_price Praha"><tr><td class="less">260</td>
+    <td class="more">270</td> 
+    <td class="most">280</td>
+  </tr></tbody>
+   <tbody class="hide_price Mnichov"><tr><td class="less">400</td>
+    <td class="more">420</td> 
+    <td class="most">440</td>
+  </tr></tbody>
+    <tbody class="hide_price Brno"><tr><td class="less">100</td>
+    <td class="more">110</td> 
+    <td class="most">120</td>
+  </tr></tbody>
+   <tbody class="hide_price Kosice"><tr><td class="less">300</td>
+    <td class="more">310</td> 
+    <td class="most">320</td>
+  </tr></tbody>
+    <tbody class="hide_price Vieden"><tr><td class="less">65</td>
+    <td class="more">75</td> 
+    <td class="most">85</td>
+  </tr></tbody>
+   <tbody class="hide_price Schwechat"><tr><td class="less">50</td>
+    <td class="more">60</td> 
+    <td class="most">70</td>
+  </tr></tbody>
+    <tbody class="hide_price Milano"><tr><td class="less">820</td>
+    <td class="more">840</td> 
+    <td class="most">860</td>
+  </tr></tbody>
+    
+</table> 
+
+<table class="extra_price" style="width:100%">
+  <tr>
+    <th>Priplatok</th>
+    <th>Cena</th> 
+    
+  </tr>
+  <tr>
+    <td>Pristavenie vozidla na ďalšiu adresu</td>
+    <td>5 €</td> 
+    
+  </tr>
+  <tr>
+    <td>Čakanie nad 30 min</td>
+    <td>12 € / h</td> 
+   
+  </tr>
+   <tr>
+    <td>Mestské časti Bratislavy 
+(Dúbravka, Trnávka, Dolné Hony, Pod. Biskupice, Lamač, Rača a letisko)</td>
+    <td>+5 €</td> 
+    
+  </tr>
+   <tr>
+    <td>Okrajové časti Bratislavy 
+(Devínska, Vajnory)</td>
+    <td>+7 €</td> 
+  
+  </tr>
+   <tr>
+    <td>Prenájom limuzíny s vodičom</td>
+    <td> 40 € / h</td> 
+   
+  </tr>
+</table></div>
+          <div class="col-md-2">
+                  <!--  <p>
                       <label for="amount">Príchod do:</label>
                       <input type="text" id="amount" readonly>
-                    </p>
+                    </p>-->
                     
                     <ul class="city_list">
-                     <li> <a href="#">Mnichov </a>          </li>
-                    <li> <a href="#">Praha </a>          </li>
-                    <li> <a href="#">Budapest </a>          </li>
-                   <li> <a href="#">Brno </a>          </li>
-                   <li> <a href="#">Kosice </a>          </li>
-                   <li> <a href="#">Vieden </a>          </li>
+                         <li> <a href="#">Milano </a>          </li>
+
+                    
                    <li> <a href="#">Schwechat </a>          </li>
-                   <li> <a href="#">Milano </a>          </li>
+                                      <li> <a href="#">Vieden </a>          </li>
+
+                                      <li> <a href="#">Kosice </a>          </li>
+
+                                      <li> <a href="#">Brno </a>          </li>
+
+                                        <li> <a href="#">Mnichov </a>          </li>
+
+                                       <li> <a href="#">Praha </a>          </li>
+
+                   <li> <a href="#">Budapest </a>          </li>
                                 </ul>
                      
                     <div id="slider-vertical"></div>
           </div>';
+
+
     return $html;
 
 }

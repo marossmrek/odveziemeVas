@@ -296,7 +296,7 @@ aside{
 
 /*CENNIK*/
 .cennik{
-    background-color: #0b070799;
+    background-color: #0b07071a;
 }
 body > section:nth-child(2){
     height: auto;
@@ -323,20 +323,41 @@ body > section:nth-child(2){
 
 #amount{
     border: 0;
-    color: #7fdbfd;
+    color: #eb1a1a;
     font-weight: bold;
-    background-color: #6c6a6a;
+    background-color: #e6e5e5;;
 }
+
+.BA{
+    color: #52aacb;
+}
+
+table{
+    font-size: 12px;
+}
+.load_show_price > tr > td {
+    width: 33% !important;
+}
+
+/*.city_place{
+    width: 100%;
+}*/
+
+.city_price > thead:nth-child(1) > tr:nth-child(1) > th:nth-child(1) > p:nth-child(1){
+    margin: 0px 0px 15px;
+}
+
 
 .col-md-1 > p:nth-child(1) > label:nth-child(1){
     font-size: 12px;
 }
-/*path {
+
+path {
     display: none;
 }
 #dk{
     display: none !important;
-}*/
+}
 
 path#sk, path#cz, path#rk, path#de, path#hu, path#at, path#it, path#svg_18,path#svg_1,
 path#svg_2,path#svg_7,path#svg_8,path#svg_11,path#svg_15,path#svg_21,path#svg_24{
@@ -353,11 +374,9 @@ path#sk{
 
 svg{
     transform: scale(3);
-}
-
-.europe_maps{
     position: relative;
-    top:-350px;
+    left: -115px;
+    top: -317px;
 }
 
 .col-md-1 > p:nth-child(1) > label:nth-child(1){
@@ -370,16 +389,31 @@ svg{
 
 ul.city_list{
     position: absolute;
-    top: 14%;
+    top: -14%;
 }
 ul.city_list > li{
-    margin-top: 30%;
+    margin-top: 35%;
     list-style: none;
 }
 
+ul.city_list > li > a {
+    color: #52aacb;
+    text-decoration: none;
+}
 .col-md-1 > p:nth-child(1){
     margin: 0px 0px 35px;
 }
+
+/*TABLE CENNIK*/
+.extra_price{
+    margin-top: 50px;
+}
+.hide_price{
+    display: none;
+}
+
+
+
 /*FOOTER*/
 
 footer{

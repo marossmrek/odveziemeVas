@@ -34,14 +34,67 @@
     var cesko     = $('path#cz');
     var madarsko  = $('path#hu');
     var slovensko = $('path#sk');
-    var nemecko = $('path#de');
+    var nemecko   = $('path#de');
+    var taliansko = $('path#it');
+    var rakusko   = $('path#at');
+
+    var loadMalo    = $('.city_price').find('.load_show_price').find('.load_less');
+    var loadViac    = $('.city_price').find('.load_show_price').find('.load_more');
+    var loadnajviac =  $('.city_price').find('.load_show_price').find('.load_most');
 
     function maps ( stat, mestoBod ){
         stat.addClass('select_city');
         stat.siblings().removeClass('select_city');
+        $('.point').hide();
         mestoBod.fadeIn(2000);
         $('#svg_1').fadeIn(500);
     }
+
+/*
+    function ajaxReq (){
+        var parse="";
+            $.ajax({
+                method: "GET",
+                url: "cennik",
+                dataType: "html"
+            }).done(function(html){
+                parse = $($.parseHTML(html));
+            });
+        return parse;
+    }
+
+    function setPrice ( parseD, cityPrice ) {
+            console.log(parseD);
+            var tablesPrice = parseD.find('.city_price').find('.cityPrice');
+            var maloOsob = tablesPrice.find('.less').text();
+            var viacOsob = tablesPrice.find('.more').text();
+            var velaOsob = tablesPrice.find('.most').text();
+
+            loadMalo.text(maloOsob);
+            loadViac.text(viacOsob);
+            loadnajviac.text(velaOsob);
+    }
+*/
+
+    function ajaxreq ( cityPrice ){
+
+            $.ajax({
+                method: "GET",
+                url: "cennik",
+                dataType: "html"
+            }).done(function(html){
+                var parse = $($.parseHTML(html));
+                var tablesPrice = parse.find('.city_price').find(cityPrice);
+                var maloOsob = tablesPrice.find('.less').text();
+                var viacOsob = tablesPrice.find('.more').text();
+                var velaOsob = tablesPrice.find('.most').text();
+
+                loadMalo.text(maloOsob);
+                loadViac.text(viacOsob);
+                loadnajviac.text(velaOsob);
+            });
+    }
+
 
     $( "#slider-vertical" ).slider({
         orientation: "vertical",
@@ -51,20 +104,66 @@
 
         slide: function( event, ui ) {
 
+           /* var parseHTM = ajaxReq();*/
+
+   /*         $.ajax({
+                method: "GET",
+                url: "cennik",
+                dataType: "html"
+            }).done(function(html){
+                var parse = $($.parseHTML(html));
+                var tablesPrice = parse.find('.city_price').find('.HU');
+                var maloOsob = tablesPrice.find('.less').text();
+                var viacOsob = tablesPrice.find('.more').text();
+                var velaOsob = tablesPrice.find('.most').text();
+
+                loadMalo.text(maloOsob);
+                loadViac.text(viacOsob);
+                loadnajviac.text(velaOsob);
+            });*/
+
                 $('.point').hide();
 
                    switch(ui.value){
                        case 1:
                            ui.value = 'Budapest';
                            maps(madarsko, $('path#svg_18') );
+                           ajaxreq('.Budapest');
                            break;
                        case 2:
                            ui.value = 'Praha';
                            maps( cesko, $('path#svg_15') );
+                           ajaxreq('.Praha');
                            break;
                        case 3:
                            ui.value = 'Mnichov';
                            maps(nemecko, $('path#svg_21') );
+                           ajaxreq('.Mnichov');
+                           break;
+                       case 4:
+                           ui.value = 'Brno';
+                           maps(cesko, $('path#svg_11') );
+                           ajaxreq('.Brno');
+                           break;
+                       case 5:
+                           ui.value = 'Kosice';
+                           maps(slovensko, $('path#svg_7') );
+                           ajaxreq('.Kosice');
+                           break;
+                       case 6:
+                           ui.value = 'Vieden';
+                           maps(rakusko, $('path#svg_2') );
+                           ajaxreq('.Vieden');
+                           break;
+                       case 7:
+                           ui.value = 'Schwechat';
+                           maps(rakusko, $('path#svg_8') );
+                           ajaxreq('.Schwechat');
+                           break;
+                       case 8:
+                           ui.value = 'Milano';
+                           maps(taliansko, $('path#svg_24') );
+                           ajaxreq('.Milano');
                            break;
                        default:
                            ui.value = 'Zvolte si mesto';
