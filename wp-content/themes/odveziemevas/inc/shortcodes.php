@@ -15,7 +15,52 @@ function odveziem_home_shortcode($atts)
                       </div>';
 }
 
+// cars list and descriptions descriprtions
+add_shortcode('cars_list', 'odveziem_cars_list_shortcode');
+/**
+ * @param $atts
+ */
+function odveziem_cars_list_shortcode($atts)
+{
 
+    echo  '<div class="col-md-2 cars_list_container">
+                    <ul class="cars_list">';
+                            for($i=1; count($atts)/2 > $i-1; $i++){
+                                echo '<li>'.$atts['typ'.$i].'</li>';
+                            }
+    echo             '</ul>  
+           </div>';
+
+
+    echo '<div class="col-md-4 cars_desc_container">
+                    ';
+                            for($i=1; count($atts)/2 > $i-1; $i++){
+                                echo '<h1>'.$atts['typ'.$i].'</h1>';
+                                echo '<p>'. $atts['popis'.$i].'</p>';
+                            }
+    echo            '  
+          </div>';
+}
+
+add_shortcode('odveziem_gallery', 'odveziem_gallery_shortcode');
+function odveziem_gallery_shortcode( $atts)
+{
+
+    $post  = get_post();
+    /*$media = get_attached_media( 'image', $post->ID );*/
+    $html = '<div class="col-md-6 image_container">';
+    $html .= '<span class="prev"><</span>';
+    $html .= '<span class="next">></span>';
+/*    foreach ( $media as $img )
+    {
+        $html .= '<img src="'. esc_url( wp_get_attachment_image_url($img->ID, 'full') ) .'"
+					class="cars"
+					alt="'. esc_attr( $img->post_title ) .'">';
+    }*/
+    $html .= '</div>';
+
+    return $html;
+}
 // city slider, price page shotrcode
 add_shortcode('slider', 'odveziem_slider_shortcode');
 function odveziem_slider_shortcode()

@@ -413,6 +413,71 @@ ul.city_list > li > a {
 }
 
 
+/*
+FLOTILA
+*/
+#Flotila,
+.cars_list_container,
+.cars_list,
+.cars_desc_container,
+.image_container{
+    padding: 0;
+}
+
+.image_container{
+    position: relative;
+}
+.next, .prev{
+    position: absolute;
+    top : 35%;
+    font-size:50px;
+    color:#fff;
+    cursor: pointer;
+}
+
+.next{
+    left: 95%;
+}
+.cars_list{
+    text-align: center;
+}
+
+.cars_desc_container{
+    color: #333;
+    background: #fff;
+}
+
+.cars{
+    display: none;
+}
+
+.cars:nth-of-type(1){
+    display: block;
+}
+
+.cars_list > li{
+    color: #fff;
+    list-style: none;
+    padding: 24px 25px;
+    font-size: 15px;
+    font-variant: small-caps;
+}
+
+.cars_list > li:hover {
+    color: #333;
+    background: #fff;
+    cursor: pointer;
+}
+
+.flotila{
+    background: #333;
+}
+
+.cars{
+    max-width: 100%;
+    height: auto;
+}
+
 
 /*FOOTER*/
 

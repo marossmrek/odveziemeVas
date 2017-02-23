@@ -13,3 +13,4 @@ require_once THEME_DIRECTORY.'/inc/loading_style_script.php';
 require_once THEME_DIRECTORY.'/inc/shortcodes.php';
 
 require_once THEME_DIRECTORY.'/inc/widget.php';
+

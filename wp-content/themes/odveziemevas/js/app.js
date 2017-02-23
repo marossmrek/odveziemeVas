@@ -1,5 +1,45 @@
 (function($) {
 
+    var carsFromList = $('.cars_list li');
+    carsFromList.on('click', function(){
+
+        var cartext = $(this).text();
+        ajaxImage(cartext);
+    })
+
+    var next = $('.next');
+    var prev = $('.prev');
+    next.on('click', function(){
+        console.log('aaaaaa');
+    })
+
+    function imgSlider(){
+        var firstCar = $('.cars').first();
+        firstCar.hide();
+        firstCar.fadeIn(750);
+    }
+
+    function ajaxImage ( carType ) {
+
+        $('.image_container').find('img').remove();
+
+        $.ajax({
+            method: "GET",
+            url: "http://localhost/odvezieme/wp-json/wp/v2/media?per_page=50",
+            dataType: "json"
+        }).done(function(json){
+
+            for(var i=0; json.length > i; i++){
+
+                if(json[i].alt_text==carType){
+
+                     var img = '<img class="cars" src="'+json[i].source_url+'">';
+                     $( ".image_container" ).prepend( img );
+                }
+            }
+        });
+    }
+
     var hamburger = $('.nav-icon1');
 
     hamburger.on('click', function(){
@@ -23,6 +63,7 @@
     }, 5000);
 
     window.addEventListener("load", function (event) {
+        ajaxImage();
         setTimeout(function () {
            $('html').fadeIn(1000);
         }, 2000);
@@ -75,7 +116,6 @@
             loadnajviac.text(velaOsob);
     }
 */
-
     function ajaxreq ( cityPrice ){
 
             $.ajax({
