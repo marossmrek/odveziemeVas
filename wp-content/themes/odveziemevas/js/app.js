@@ -1,27 +1,59 @@
 (function($) {
 
+    // variables for elements on click events
+    var nextImage    = $('.next');
+    var prevImage    = $('.prev');
     var carsFromList = $('.cars_list li');
+    var headingCars  = $('.cars_desc_container h1');
+    console.log(headingCars);
+
+    // fadeIn after load flotila page
+    $('.cars').first().hide().fadeIn(1250);
+
+    // image slide after click on next symbol
+    nextImage.on('click', function(){
+        var carFirst = $('.cars').first();
+        var carNext  = carFirst.next();
+        var carLast  = $('.cars').last();
+        carLast.after(carFirst);
+        carNext.hide().fadeIn(750);
+        carNext.siblings('.cars').hide();
+    })
+
+    //image slide after click on before symbol
+    prevImage.on('click', function(){
+        var carFirst = $('.cars').first();
+        var carLast  = $('.cars').last();
+        carFirst.before(carLast);
+        carLast.hide().fadeIn(750);
+        carLast.siblings('.cars').hide();
+    })
+
+    //remove old images set of cars a call functions to find new image set
     carsFromList.on('click', function(){
+
+        $('.image_container').find('img').remove();
+        nextImage.hide();
+        prevImage.hide();
 
         var cartext = $(this).text();
         ajaxImage(cartext);
+
+        for(var i =0; headingCars.length > i; i++){
+
+            var carClickHeading = headingCars[i].innerText;
+
+            if(carClickHeading == cartext){
+                var headingShow      = headingCars[i];
+                var descriptionsShow = headingShow.nextSibling;
+                headingShow.style.display = 'block';
+            }
+        }
+
     })
 
-    var next = $('.next');
-    var prev = $('.prev');
-    next.on('click', function(){
-        console.log('aaaaaa');
-    })
-
-    function imgSlider(){
-        var firstCar = $('.cars').first();
-        firstCar.hide();
-        firstCar.fadeIn(750);
-    }
-
+    // function for ajax request to WP REST API, find images by model of coosen car
     function ajaxImage ( carType ) {
-
-        $('.image_container').find('img').remove();
 
         $.ajax({
             method: "GET",
@@ -33,12 +65,17 @@
 
                 if(json[i].alt_text==carType){
 
-                     var img = '<img class="cars" src="'+json[i].source_url+'">';
+                     var img = '<img class="cars show_car" src="'+json[i].source_url+'">';
                      $( ".image_container" ).prepend( img );
                 }
             }
+            var carFirst = $('.cars').first();
+            carFirst.hide().fadeIn(750);
+            nextImage.fadeIn(1000);
+            prevImage.fadeIn(1000);
         });
     }
+
 
     var hamburger = $('.nav-icon1');
 
@@ -63,7 +100,11 @@
     }, 5000);
 
     window.addEventListener("load", function (event) {
-        ajaxImage();
+
+        // first car fadeIn after load flotila page
+        var carFirst = $('.cars').first();
+        carFirst.fadeIn(750);
+
         setTimeout(function () {
            $('html').fadeIn(1000);
         }, 2000);

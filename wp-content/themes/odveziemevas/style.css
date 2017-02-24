@@ -431,13 +431,14 @@ FLOTILA
     position: absolute;
     top : 35%;
     font-size:50px;
-    color:#fff;
+    color:#fff000;
     cursor: pointer;
 }
 
 .next{
     left: 95%;
 }
+
 .cars_list{
     text-align: center;
 }
@@ -446,6 +447,14 @@ FLOTILA
     color: #333;
     background: #fff;
 }
+
+.cars_desc_container h1, .cars_desc_container  p{
+    display: none;
+}
+
+/*.cars_desc_container h1.just_show, .cars_desc_container p.just_show{
+    display: block !important;
+}*/
 
 .cars{
     display: none;

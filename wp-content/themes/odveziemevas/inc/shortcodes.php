@@ -47,16 +47,16 @@ function odveziem_gallery_shortcode( $atts)
 {
 
     $post  = get_post();
-    /*$media = get_attached_media( 'image', $post->ID );*/
+    $media = get_attached_media( 'image', $post->ID );
     $html = '<div class="col-md-6 image_container">';
     $html .= '<span class="prev"><</span>';
     $html .= '<span class="next">></span>';
-/*    foreach ( $media as $img )
+    foreach ( $media as $img )
     {
         $html .= '<img src="'. esc_url( wp_get_attachment_image_url($img->ID, 'full') ) .'"
 					class="cars"
 					alt="'. esc_attr( $img->post_title ) .'">';
-    }*/
+    }
     $html .= '</div>';
 
     return $html;
