@@ -14,3 +14,21 @@ require_once THEME_DIRECTORY.'/inc/shortcodes.php';
 
 require_once THEME_DIRECTORY.'/inc/widget.php';
 
+
+// contact page contact data
+add_shortcode('contact-data', 'odveziem_contact_data_shortcode');
+function odveziem_contact_data_shortcode($atts)
+{
+    $html = '<div class="col-md-5">
+ 
+                <ul class="contact_list">
+                    <li>'.$atts['meno'].'</li>
+                    <li>'.$atts['telefon'].'</li>
+                    <li>'.$atts['mail'].'</li>
+                    <li>'.$atts['mail2'].'</li>
+                </ul>
+ 
+            </div>';
+
+    return $html;
+}

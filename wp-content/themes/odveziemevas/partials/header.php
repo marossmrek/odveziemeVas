@@ -33,7 +33,7 @@
                     <?php
                     $menu = wp_get_nav_menu_items('Main menu');
                     foreach ($menu as $menu_item){?>
-                    <li><a class="site" href="<?php print_r($menu_item->url);?>"><?php print_r($menu_item->title);?></a></li>
+                    <li><a class="<?php print_r($menu_item->title);?> site" href="<?php print_r($menu_item->url);?>"><?php print_r($menu_item->title);?></a></li>
                     <?php }
                     ?>
                 </ul>

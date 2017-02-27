@@ -49,12 +49,12 @@ function odveziem_gallery_shortcode( $atts)
     $post  = get_post();
     $media = get_attached_media( 'image', $post->ID );
     $html = '<div class="col-md-6 image_container">';
-    $html .= '<span class="prev"><</span>';
-    $html .= '<span class="next">></span>';
+    $html .= '<span class="prev arrow"><</span>';
+    $html .= '<span class="next arrow">></span>';
     foreach ( $media as $img )
     {
         $html .= '<img src="'. esc_url( wp_get_attachment_image_url($img->ID, 'full') ) .'"
-					class="cars"
+					class="cars car_showing"
 					alt="'. esc_attr( $img->post_title ) .'">';
     }
     $html .= '</div>';
@@ -188,7 +188,7 @@ function odveziem_slider_shortcode()
     <tr>
       <th class="city_place">  <p>
                       <label for="amount">Odjazd z <span class="BA">Bratislavy</span>, príchod do mesta:</label>
-                      <input type="text" id="amount" readonly>
+                      <input type="text" id="amount"  value="zvol">
                     </p></th>
       
     </tr>

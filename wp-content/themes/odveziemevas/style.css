@@ -19,7 +19,7 @@ html,body{
     list-style: none;
 }
 
-.domov,.kontakt{
+.domov{
     background: url("img/home_background.jpg") 50% 0 no-repeat fixed;
     background-size: cover;
     height: 100%;
@@ -58,6 +58,10 @@ img.attachment-full{
     left: 60%;
     width: 40%;
     background: #1f1f1f;
+}
+
+.active_page{
+    color: #fff000!important;
 }
 
 .navigacia{
@@ -446,15 +450,16 @@ FLOTILA
 .cars_desc_container{
     color: #333;
     background: #fff;
+    height: 300px;
 }
 
 .cars_desc_container h1, .cars_desc_container  p{
     display: none;
 }
 
-/*.cars_desc_container h1.just_show, .cars_desc_container p.just_show{
-    display: block !important;
-}*/
+.col-md-4 > h1:nth-child(3), .col-md-4 > p:nth-child(4){
+    display: block;
+}
 
 .cars{
     display: none;
@@ -472,8 +477,8 @@ FLOTILA
     font-variant: small-caps;
 }
 
-.cars_list > li:hover {
-    color: #333;
+.cars_list > li:hover, .select_car {
+    color: #333 !important;
     background: #fff;
     cursor: pointer;
 }
@@ -488,10 +493,85 @@ FLOTILA
 }
 
 
-/*FOOTER*/
+/*
+KONTAKT
+*/
 
-footer{
-    background-color: rgba(255,255,255,0.8);
-    padding: 1% 0%;
-    text-align: center;
+.kontakt{
+    background-color: #2e6da4;
 }
+
+.contact_list li{
+    list-style: none;
+    list-style: none;
+    padding: 5px 0;
+    color: #fff;
+    font-variant: sub;
+    font-size: 18px;
+}
+
+label, input, textarea{
+    width: 100%;
+}
+
+label{
+    margin-bottom: 8px;
+}
+
+input, textarea{
+    background: none;
+    border: 1px solid aliceblue;
+    margin-top: 5px;
+    color: #333;
+}
+input{
+    height: 35px;
+}
+
+.wpcf7-response-output, .screen-reader-response > ul:nth-child(1) > li{
+    display: none;
+}
+
+.screen-reader-response{
+    color:#2e6da4;
+    background:#fff000;
+   /* padding: 15px;*/
+    border-radius: 4px;
+    text-align: center;
+    font-size: 15px;
+    font-variant: small-caps;
+    margin-bottom: 10px;
+}
+
+input:focus, textarea:focus{
+    background: aliceblue;
+    border: 1px solid #333;
+
+}
+.wpcf7-not-valid-tip{
+    color:#fff000;
+}
+
+.wpcf7-submit{
+    width: 46.5%;
+    width: 46.5%;
+    height: 50px;
+    background:#fff000;
+    color: #2e6da4;
+    border-radius: 4px;
+    font-size: 18px;
+    font-variant: all-petite-caps;
+}
+
+.wpcf7-submit:hover, .wpcf7-submit:focus{
+    color:#fff000;
+    background: #2e6da4;
+}
+
+.wpcf7-form p{
+    color: #fff;
+    font-variant: sub;
+}
+
+
+

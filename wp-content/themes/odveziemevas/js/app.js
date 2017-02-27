@@ -1,55 +1,70 @@
 (function($) {
 
+
+    //just addclass form generate from contact form 7 plugin , later must change, not working normali
+    $('#wpcf7-f110-p11-o1').addClass('col-md-7');
+
+    // fadeOut alert window after showing
+   /* $('.screen-reader-response').fadeOut(3000);*/
+
     // variables for elements on click events
     var nextImage    = $('.next');
     var prevImage    = $('.prev');
+    var changeImage  = $('.arrow');
     var carsFromList = $('.cars_list li');
     var headingCars  = $('.cars_desc_container h1');
-    console.log(headingCars);
 
     // fadeIn after load flotila page
     $('.cars').first().hide().fadeIn(1250);
 
-    // image slide after click on next symbol
-    nextImage.on('click', function(){
+    //change image after click on next or previous symbol
+    changeImage.on('click', function(){
+
         var carFirst = $('.cars').first();
         var carNext  = carFirst.next();
         var carLast  = $('.cars').last();
-        carLast.after(carFirst);
-        carNext.hide().fadeIn(750);
-        carNext.siblings('.cars').hide();
-    })
 
-    //image slide after click on before symbol
-    prevImage.on('click', function(){
-        var carFirst = $('.cars').first();
-        var carLast  = $('.cars').last();
-        carFirst.before(carLast);
-        carLast.hide().fadeIn(750);
-        carLast.siblings('.cars').hide();
+        if( $(this).hasClass('next') ) {
+            carLast.after(carFirst);
+            carNext.hide().fadeIn(750);
+            carNext.siblings('.cars').hide();
+        }
+        else {
+            carFirst.before(carLast);
+            carLast.hide().fadeIn(750);
+            carLast.siblings('.cars').hide();
+        }
     })
 
     //remove old images set of cars a call functions to find new image set
     carsFromList.on('click', function(){
 
+        // show select cars in list of cars
+        $(this).addClass('select_car');
+        $(this).siblings('li').removeClass('select_car');
+
+        //remove old showing images
         $('.image_container').find('img').remove();
         nextImage.hide();
         prevImage.hide();
 
+        //save text of selected car
         var cartext = $(this).text();
+
+        // call function to show image of chossen car
         ajaxImage(cartext);
 
-        for(var i =0; headingCars.length > i; i++){
-
-            var carClickHeading = headingCars[i].innerText;
-
-            if(carClickHeading == cartext){
-                var headingShow      = headingCars[i];
-                var descriptionsShow = headingShow.nextSibling;
-                headingShow.style.display = 'block';
+        // show heading and description of selected car
+        headingCars.each(function() {
+            if($(this).text() == cartext){
+                var headingShow      = $(this);
+                var descriptionsShow = headingShow.next();
+                var allSiblingsHide  = headingShow.siblings();
+                allSiblingsHide.hide();
+                headingShow.fadeIn(1000);
+                descriptionsShow.fadeIn(1000);
             }
-        }
-
+        });
     })
 
     // function for ajax request to WP REST API, find images by model of coosen car
@@ -101,16 +116,21 @@
 
     window.addEventListener("load", function (event) {
 
-        // first car fadeIn after load flotila page
-        var carFirst = $('.cars').first();
+        // first car fadeIn after load flotila page and show select car in list of all cars
+        var carFirst     = $('.cars').first();
+        var carListFirst = $('.cars_list > li:nth-child(2)');
         carFirst.fadeIn(750);
+        carListFirst.addClass('select_car');
 
-        setTimeout(function () {
-           $('html').fadeIn(1000);
-        }, 2000);
-        $('#amount').val('Zvolte si mesto');
+        // change color of selected page in main navigation
+        var url = window.location.href;
+        $('.overlay_nav a').each(function() {
+            if (url == (this.href)) {
+                    $(this).addClass("active_page");
+                    console.log($(this));
+                }
+            });
     })
-
 
     //slider
     var cesko     = $('path#cz');
