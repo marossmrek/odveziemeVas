@@ -6,6 +6,7 @@ add_shortcode('home', 'odveziem_home_shortcode');
 function odveziem_home_shortcode($atts)
 {
 
+    echo '<div class="row more_overlay"> </div>';
 
     echo '<div class="col-md-8 col-md-offset-2">
                       <div class="wells">';

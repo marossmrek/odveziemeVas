@@ -1,5 +1,53 @@
 (function($) {
 
+    //more page
+    var moreInfo   = $('.more_overlay');
+    var moreButton = $('.btn-more');
+
+    moreButton.on('click', function (event) {
+        event.preventDefault();
+        moreInfo.slideToggle();
+        ajaxInfo();
+    })
+
+    //counter of clients, kilometers and cars on more info page
+    function counter() {
+        $('div.counter').each(function() {
+            var $this = $(this),
+                countTo = $this.attr('data-count');
+
+            $({ countNum: $this.text()}).animate({
+                    countNum: countTo
+                },
+
+                {   duration: 2000,
+                    easing:'linear',
+                    step: function() {
+                        $this.text(Math.floor(this.countNum));
+                    },
+                    complete: function() {
+                        $this.text(this.countNum);
+                    }
+                });
+        });
+    }
+
+    function ajaxInfo (){
+        $.ajax({
+            method: "GET",
+            url: "http://localhost/odvezieme/wp-json/wp/v2/pages?slug='viac'",
+            dataType: "json"
+        }).done(function(json){
+            var info = json[0].content.rendered;
+            moreInfo.prepend(info);
+            counter();
+            $('.btn-back').on('click', function(event){
+                event.preventDefault();
+                moreInfo.slideToggle();
+            })
+        });
+    }
+
 
     //just addclass form generate from contact form 7 plugin , later must change, not working normali
     $('#wpcf7-f110-p11-o1').addClass('col-md-7');
@@ -127,7 +175,6 @@
         $('.overlay_nav a').each(function() {
             if (url == (this.href)) {
                     $(this).addClass("active_page");
-                    console.log($(this));
                 }
             });
     })
@@ -152,31 +199,6 @@
         $('#svg_1').fadeIn(500);
     }
 
-/*
-    function ajaxReq (){
-        var parse="";
-            $.ajax({
-                method: "GET",
-                url: "cennik",
-                dataType: "html"
-            }).done(function(html){
-                parse = $($.parseHTML(html));
-            });
-        return parse;
-    }
-
-    function setPrice ( parseD, cityPrice ) {
-            console.log(parseD);
-            var tablesPrice = parseD.find('.city_price').find('.cityPrice');
-            var maloOsob = tablesPrice.find('.less').text();
-            var viacOsob = tablesPrice.find('.more').text();
-            var velaOsob = tablesPrice.find('.most').text();
-
-            loadMalo.text(maloOsob);
-            loadViac.text(viacOsob);
-            loadnajviac.text(velaOsob);
-    }
-*/
     function ajaxreq ( cityPrice ){
 
             $.ajax({
