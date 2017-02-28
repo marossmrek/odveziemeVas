@@ -11,8 +11,8 @@ function odveziem_widgets_init()
     ));
 
     register_sidebar( array(
-        'name'          => 'Menu footer',
-        'id'            => 'menu-footer',
-        'description'   => 'for submenu in footer'
+        'name'          => 'Developer advertismant',
+        'id'            => 'developer',
+        'description'   => 'small widget for developer advetismant and href to his website'
     ));
 }

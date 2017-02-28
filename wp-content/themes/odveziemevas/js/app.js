@@ -5,22 +5,29 @@
     var moreButton = $('.btn-more');
 
     moreButton.on('click', function (event) {
+
         event.preventDefault();
-        moreInfo.slideToggle();
-        ajaxInfo();
+        moreInfo.toggleClass('more_overlay_come');
+        if( moreInfo.hasClass('more_overlay_away') ){
+            moreInfo.removeClass('more_overlay_away');
+            return true;
+        }else{
+            ajaxInfo();
+
+        }
     })
 
     //counter of clients, kilometers and cars on more info page
     function counter() {
         $('div.counter').each(function() {
-            var $this = $(this),
-                countTo = $this.attr('data-count');
+            var $this = $(this).find('.counter_number'),
+                countTo = $(this).attr('data-count');
 
             $({ countNum: $this.text()}).animate({
                     countNum: countTo
                 },
 
-                {   duration: 2000,
+                {   duration: 2500,
                     easing:'linear',
                     step: function() {
                         $this.text(Math.floor(this.countNum));
@@ -43,7 +50,8 @@
             counter();
             $('.btn-back').on('click', function(event){
                 event.preventDefault();
-                moreInfo.slideToggle();
+                moreInfo.removeClass('more_overlay_come');
+                moreInfo.toggleClass('more_overlay_away');
             })
         });
     }
@@ -177,6 +185,8 @@
                     $(this).addClass("active_page");
                 }
             });
+
+        $('#amount').val('Zvolte si mesto');
     })
 
     //slider
@@ -199,23 +209,24 @@
         $('#svg_1').fadeIn(500);
     }
 
-    function ajaxreq ( cityPrice ){
+    function arrowshow(line, arrow){
+        $('.to_city_arrow').hide();
+        line.fadeIn(1000);
+        arrow.fadeIn(2000);
+    }
 
-            $.ajax({
-                method: "GET",
-                url: "cennik",
-                dataType: "html"
-            }).done(function(html){
-                var parse = $($.parseHTML(html));
-                var tablesPrice = parse.find('.city_price').find(cityPrice);
-                var maloOsob = tablesPrice.find('.less').text();
-                var viacOsob = tablesPrice.find('.more').text();
-                var velaOsob = tablesPrice.find('.most').text();
+    function priceFinder(priceElement){
+            var str = priceElement;
+            var rest = str.split(" ");
+            var tableMust = $('.'+rest);
 
-                loadMalo.text(maloOsob);
-                loadViac.text(viacOsob);
-                loadnajviac.text(velaOsob);
-            });
+            var maloOsob = tableMust.find('.less').text();
+            var viacOsob = tableMust.find('.more').text();
+            var velaOsob = tableMust.find('.most').text();
+
+            loadMalo.text(maloOsob);
+            loadViac.text(viacOsob);
+            loadnajviac.text(velaOsob);
     }
 
 
@@ -227,66 +238,56 @@
 
         slide: function( event, ui ) {
 
-           /* var parseHTM = ajaxReq();*/
-
-   /*         $.ajax({
-                method: "GET",
-                url: "cennik",
-                dataType: "html"
-            }).done(function(html){
-                var parse = $($.parseHTML(html));
-                var tablesPrice = parse.find('.city_price').find('.HU');
-                var maloOsob = tablesPrice.find('.less').text();
-                var viacOsob = tablesPrice.find('.more').text();
-                var velaOsob = tablesPrice.find('.most').text();
-
-                loadMalo.text(maloOsob);
-                loadViac.text(viacOsob);
-                loadnajviac.text(velaOsob);
-            });*/
-
-                $('.point').hide();
-
+                   $('.point').hide();
+                   var cityArray = jQuery('.city_list li');
                    switch(ui.value){
                        case 1:
-                           ui.value = 'Budapest';
+                           ui.value = cityArray[7].innerText;
                            maps(madarsko, $('path#svg_18') );
-                           ajaxreq('.Budapest');
+                           arrowshow($('#e8342_shape'),$('#e39_circleArc'));
+                           priceFinder(cityArray[7].innerText);
                            break;
                        case 2:
-                           ui.value = 'Praha';
+                           ui.value = cityArray[6].innerText;;
                            maps( cesko, $('path#svg_15') );
-                           ajaxreq('.Praha');
+                           arrowshow($('#e9980_shape'),$('#e2780_circleArc'));
+                           priceFinder(cityArray[6].innerText);
                            break;
                        case 3:
-                           ui.value = 'Mnichov';
+                           ui.value = cityArray[5].innerText;;
                            maps(nemecko, $('path#svg_21') );
-                           ajaxreq('.Mnichov');
+                           arrowshow($('#e14708_shape'),$('#e3092_circleArc'));
+                           priceFinder(cityArray[5].innerText);
                            break;
                        case 4:
-                           ui.value = 'Brno';
+                           ui.value = cityArray[4].innerText;;
                            maps(cesko, $('path#svg_11') );
-                           ajaxreq('.Brno');
+                           arrowshow($('#e15882_shape'),$('#e21_circleArc'));
+                           priceFinder(cityArray[4].innerText);
                            break;
                        case 5:
-                           ui.value = 'Kosice';
+                           ui.value = cityArray[3].innerText;;
                            maps(slovensko, $('path#svg_7') );
-                           ajaxreq('.Kosice');
+                           arrowshow($('#e5348_shape'),$('#e3_circleArc'));
+                           priceFinder(cityArray[3].innerText);
                            break;
                        case 6:
-                           ui.value = 'Vieden';
+                           ui.value = cityArray[2].innerText;;
                            maps(rakusko, $('path#svg_2') );
-                           ajaxreq('.Vieden');
+                           arrowshow($('#e24443_shape'),$('#e1098_circleArc'));
+                           priceFinder(cityArray[2].innerText);
                            break;
                        case 7:
-                           ui.value = 'Schwechat';
+                           ui.value = cityArray[1].innerText;;
                            maps(rakusko, $('path#svg_8') );
-                           ajaxreq('.Schwechat');
+                           arrowshow($('#e22344_shape'),$('#e1080_circleArc'));
+                           priceFinder(cityArray[1].innerText);
                            break;
                        case 8:
-                           ui.value = 'Milano';
+                           ui.value = cityArray[0].innerText;;
                            maps(taliansko, $('path#svg_24') );
-                           ajaxreq('.Milano');
+                           arrowshow($('#e13534_shape'),$('#e3110_circleArc'));
+                           priceFinder(cityArray[0].innerText);
                            break;
                        default:
                            ui.value = 'Zvolte si mesto';

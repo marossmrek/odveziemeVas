@@ -4,6 +4,7 @@
     <meta charset="<?php bloginfo('charset') ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php wp_head() ?>
 </head>
 <body <?php body_class()?>>
@@ -33,9 +34,16 @@
                     <?php
                     $menu = wp_get_nav_menu_items('Main menu');
                     foreach ($menu as $menu_item){?>
-                    <li><a class="<?php print_r($menu_item->title);?> site" href="<?php print_r($menu_item->url);?>"><?php print_r($menu_item->title);?></a></li>
-                    <?php }
+                            <?php if ( $menu_item->title=='facebook'){ ?>
+                                <li class="fb_href"><a target="_blank" class="<?php print_r($menu_item->title);?> site" href="
+                                <?php print_r($menu_item->url);?>"><?php echo '<i class="fa fa-facebook" aria-hidden="true"></i>'?></a></li><?php
+                                dynamic_sidebar('developer');
+                            break; }
+                            ?>
+                            <li><a class="<?php print_r($menu_item->title);?> site" href="<?php print_r($menu_item->url);?>"><?php print_r($menu_item->title);?></a></li>
+                            <?php }
                     ?>
+
                 </ul>
             </div>
         </div>

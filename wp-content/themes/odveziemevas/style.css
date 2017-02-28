@@ -35,8 +35,12 @@ html,body{
     margin-top: 15px;
 }
 
+.btn-back{
+    font-size: 40px;
+}
+
 div.col-md-8:nth-child(1){
-    text-align: center;
+    text-align: left;
     padding: 15px 0;
     margin-top: 0px;
 }
@@ -55,14 +59,83 @@ div.col-md-8:nth-child(1){
 }
 
 .more_overlay{
-    position: absolute;
     z-index: 100;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
-    top: 0;
-    left: 0;
     background: #7fdbfd;
     display: none;
+}
+
+.more_overlay_come {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    -webkit-animation-name: overlay_come; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: overlay_come;
+    animation-duration: 2s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes overlay_come {
+    0% {
+        left: 100%;
+        top: 0%;
+    }
+    100% {
+        left: 0%;
+        top: 0%;
+    }
+}
+
+/* Standard syntax */
+@keyframes overlay_come {
+    0% {
+        left: 100%;
+        top: 0%;
+    }
+    100% {
+        left: 0%;
+        top: 0%;
+    }
+}
+
+.more_overlay_away {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    display: block;
+    -webkit-animation-name: overlay_away; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+    animation-name: overlay_away;
+    animation-duration: 2s;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes overlay_away {
+    0% {
+        left: 0%;
+        top: 0%;
+    }
+    100% {
+        left: -100%;
+        top: 0%;
+        display: none;
+    }
+}
+
+/* Standard syntax */
+@keyframes overlay_away {
+    0% {
+        left: 0%;
+        top: 0%;
+    }
+    100% {
+        left: -100%;
+        top: 0%;
+        display: none;
+    }
 }
 
 .btn-more{
@@ -118,13 +191,18 @@ img.attachment-full{
 
 .main_menu{
     display: none;
-    z-index: 100;
+    z-index: 90;
     height: 100%;
     position: absolute;
     top: 0;
     left: 60%;
     width: 40%;
     background: #1f1f1f;
+}
+
+.me{
+    font-size: 15px !important;
+    display: block;
 }
 
 .active_page{
@@ -140,6 +218,23 @@ img.attachment-full{
     height: 40%;
     top: 30%;
     text-align: center;
+}
+
+.counter_icon{
+    position: relative;
+    top: -35%;
+}
+
+.counter_text{
+    display: block;
+    position: relative;
+    top: 4%;
+    font-size: 12px;
+}
+
+.counter_number{
+    position: relative;
+    top: -59%;
 }
 
 .overlay_nav li{
@@ -446,7 +541,7 @@ path#sk{
 svg{
     transform: scale(3);
     position: relative;
-    left: -115px;
+    left: -250px;
     top: -317px;
 }
 
@@ -460,11 +555,12 @@ svg{
 
 ul.city_list{
     position: absolute;
-    top: -14%;
+    height: 100%;
+    top: -6%;
 }
 ul.city_list > li{
-    margin-top: 35%;
     list-style: none;
+    height: 12.5%;
 }
 
 ul.city_list > li > a {
@@ -481,6 +577,13 @@ ul.city_list > li > a {
 }
 .hide_price{
     display: none;
+}
+
+.to_city_arrow{
+    stroke-width: 0.5px !important;
+    vector-effect: none !important;
+    fill: #c0c0c0;
+    stroke: #eb1a1a;
 }
 
 
