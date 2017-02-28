@@ -1,5 +1,16 @@
 (function($) {
 
+    //lightbox
+    var allCars = $('.image_container');
+    var imgHere = $('.img_here');
+
+    allCars.on('click', function(){
+        var srcImg = $(this).find('img').attr('src');
+        var img = '<img class="img_same" src="'+srcImg+'">';
+        imgHere.prepend(img);
+        $('.galerry_overlay').fadeIn(750);
+    })
+
     //more page
     var moreInfo   = $('.more_overlay');
     var moreButton = $('.btn-more');

@@ -198,5 +198,20 @@ function odveziem_table_shortcode($atts){
 }
 
 
+//gallery overlay shrtcode
+add_shortcode('odveziem_overlay', 'odveziem_overlay_shortcode');
+function odveziem_overlay_shortcode( $atts)
+{
+
+    $html = '<div class="row galerry_overlay">
+                    <div class="col-md-6 col-md-offset-3 img_here">
+                            
+                    </div>
+            </div>';
+
+    return $html;
+}
+
+
 
 

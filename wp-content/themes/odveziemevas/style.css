@@ -660,8 +660,32 @@ FLOTILA
 .cars{
     max-width: 100%;
     height: auto;
+    cursor: pointer;
+}
+.galerry_overlay {
+    background: black;
+    z-index: 200;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: none;
 }
 
+.img_here{
+    text-align: center;
+    position: relative;
+    height: 80%;
+    top: 10%;
+
+}
+
+.img_same{
+    max-width: 100%;
+    margin: 0 auto;
+    max-height: 100%;
+}
 
 /*
 KONTAKT
